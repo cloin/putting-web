@@ -1,0 +1,22 @@
+{
+    "name": "MQTT Web App Development",
+    "build": {
+      "context": "..",
+      "dockerfile": "Dockerfile"
+    },
+    "customizations": {
+      "vscode": {
+        "settings": {
+          "terminal.integrated.shell.linux": "/bin/bash"
+        },
+        "extensions": [
+          "dbaeumer.vscode-eslint",
+          "esbenp.prettier-vscode"
+        ]
+      }
+    },
+    "forwardPorts": [3000]
+    // "postCreateCommand": "npm install",
+    // "workspaceFolder": "/usr/src/app"
+  }
+  
