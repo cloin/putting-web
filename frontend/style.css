@@ -1,7 +1,6 @@
 /* Styles for the header */
 .header {
-  position: relative; /* Relative positioning for absolute child elements */
-  /* Other styles as necessary */
+  position: relative;
 }
 
 /* Style for the "New Player" button */
@@ -47,14 +46,14 @@
 /* Base styles */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4; /* Light grey background, reminiscent of an early morning at the golf course */
-    color: #333; /* Dark grey for text, ensuring good readability */
+    background-color: #f4f4f4; /* Light grey background */
+    color: #333; /* Dark grey for text */
     padding: 0px;
     margin: 0;
   }
   
   h1 {
-    color: #205723; /* Dark green, reminiscent of golf course grass */
+    color: #205723; /* Dark green */
     text-align: center;
   }
 
@@ -68,12 +67,12 @@ body {
   
   /* Green banner for "Ready" */
   .ready-banner.green {
-    background-color: #28a745; /* Bootstrap success green or similar */
+    background-color: #28a745;
   }
   
   /* Red banner for "Not Ready" */
   .ready-banner.red {
-    background-color: #dc3545; /* Bootstrap danger red or similar */
+    background-color: #dc3545;
   }
   
   .tile {
@@ -97,7 +96,7 @@ body {
   }
   
   @keyframes highlightAnimation {
-    0%, 20% { background-color: #8dbdeb; } /* Start with light yellow and hold for a bit */
+    0%, 20% { background-color: #8dbdeb; } /* Gradually change to light blue */
     100% { background-color: #fff; } /* Gradually fade back to white */
   }
   

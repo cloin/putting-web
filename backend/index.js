@@ -21,6 +21,7 @@ mqttClient.on('connect', () => {
   mqttClient.subscribe(subscriptionTopic);
 });
 
+// Handle incoming MQTT messages
 mqttClient.on('message', (topic, message) => {
   const data = { topic, message: message.toString() };
   io.emit('mqtt_data', data);
@@ -32,9 +33,8 @@ io.on('connection', (socket) => {
 
   socket.on('mqtt_command', (cmd) => {
     console.log(`Received command to publish to topic ${cmd.topic}`);
-    // Construct the MQTT message
+    // Construqt and send mqtt message
     const mqttMessage = JSON.stringify({ command: cmd.command });
-    // Publish the MQTT message
     mqttClient.publish(cmd.topic, mqttMessage);
   });
 });

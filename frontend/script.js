@@ -3,7 +3,7 @@ const socket = io();
 // Regular expressions to match topics
 const velocityTopicRegex = /^golfball\/golfball\d+\/Velocity$/;
 const ballStateTopicRegex = /^golfball\/golfball\d+\/ballState$/;
-const readyTopicRegex = /^golfball\/golfball\d+\/Ready$/; // Regex for "Ready" topic
+const readyTopicRegex = /^golfball\/golfball\d+\/Ready$/;
 
 socket.on('mqtt_data', function(data) {
   console.log('Received data:', data); // Log all received MQTT data
@@ -78,4 +78,3 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 2000);
   });
 });
-
