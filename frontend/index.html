@@ -4,16 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Golfball data</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-  <h1>Velocity</h1>
-  <p id="velocity">Awaiting data...</p>
-  
-  <h1>Stroke Counter</h1>
-  <p id="stroke-counter">Awaiting data...</p>
-  
-  <h1>Ball State</h1>
-  <p id="ball-state">Awaiting data...</p>
+  <div class="tiles-container">
+    <div class="tile">
+      <h1>Stroke</h1>
+      <p class="tile-content" id="stroke-counter">Awaiting data...</p>
+    </div>
+
+    <div class="tile">
+      <h1>Velocity</h1>
+      <p class="tile-content" id="velocity">Awaiting data...</p>
+    </div>
+
+    <div class="tile">
+      <h1>State</h1>
+      <p class="tile-content" id="ball-state">Awaiting data...</p>
+    </div>
+  </div>  
   
   <!-- Reference to Socket.IO -->
   <script src="/socket.io/socket.io.js"></script>
