@@ -4,6 +4,8 @@
 
 This repository contains the source code for a web application designed to track and display golf ball data, including velocity and ball state, in real-time using MQTT.
 
+![One putt](1putt.gif)
+
 ## Project Structure
 
 The project is divided into two main parts:
