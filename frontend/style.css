@@ -3,7 +3,7 @@ body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f4; /* Light grey background, reminiscent of an early morning at the golf course */
     color: #333; /* Dark grey for text, ensuring good readability */
-    padding: 20px;
+    padding: 0px;
     margin: 0;
   }
   
@@ -11,8 +11,25 @@ body {
     color: #205723; /* Dark green, reminiscent of golf course grass */
     text-align: center;
   }
+
+  .ready-banner {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    color: #fff; /* White text */
+    font-weight: bold;
+  }
   
-  /* Style for real-time data tiles */
+  /* Green banner for "Ready" */
+  .ready-banner.green {
+    background-color: #28a745; /* Bootstrap success green or similar */
+  }
+  
+  /* Red banner for "Not Ready" */
+  .ready-banner.red {
+    background-color: #dc3545; /* Bootstrap danger red or similar */
+  }
+  
   .tile {
     background-color: #fff;
     border: 2px solid #205723; /* Dark green border */
@@ -20,17 +37,29 @@ body {
     margin: 10px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+    transition: transform 1s ease, background-color 1s ease; /* Add background-color transition */
+  }
+
+  .tile:hover {
+    transform: translateY(-8px); /* Slight lift effect on hover */
+    background-color: #8dbeeb95; /* Highlight color on hover */
   }
   
-  .tile:hover {
-    transform: translateY(-5px); /* Slight lift effect on hover */
+  /* Animation for dynamic highlight effect */
+  .highlight {
+    animation: highlightAnimation 1s forwards;
+  }
+  
+  @keyframes highlightAnimation {
+    0%, 20% { background-color: #8dbdeb; } /* Start with light yellow and hold for a bit */
+    100% { background-color: #fff; } /* Gradually fade back to white */
   }
   
   /* Tile content */
   .tile-content {
-    font-size: 1.2rem;
+    font-size: 1.9rem;
   }
+  
   
   /* Ansible red for accent elements, like buttons or highlights */
   .ansible-accent {

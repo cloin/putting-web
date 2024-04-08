@@ -7,12 +7,8 @@
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+  <div id="ready-banner" class="ready-banner red">Awaiting status...</div>
   <div class="tiles-container">
-    <div class="tile">
-      <h1>Stroke</h1>
-      <p class="tile-content" id="stroke-counter">Awaiting data...</p>
-    </div>
-
     <div class="tile">
       <h1>Velocity</h1>
       <p class="tile-content" id="velocity">Awaiting data...</p>
@@ -22,11 +18,14 @@
       <h1>State</h1>
       <p class="tile-content" id="ball-state">Awaiting data...</p>
     </div>
+
+    <div class="tile">
+      <h1>Stroke</h1>
+      <p class="tile-content" id="stroke-counter">Awaiting data...</p>
+    </div>
   </div>  
   
-  <!-- Reference to Socket.IO -->
   <script src="/socket.io/socket.io.js"></script>
-  <!-- Reference to your JavaScript file -->
   <script src="script.js"></script>
   
 </body>
