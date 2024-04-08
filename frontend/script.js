@@ -3,10 +3,10 @@ const socket = io();
 // Regular expressions to match topics
 const velocityTopicRegex = /^golfball\/golfball\d+\/Velocity$/;
 const ballStateTopicRegex = /^golfball\/golfball\d+\/ballState$/;
-const readyTopicRegex = /^golfball\/golfball\d+\/Ready$/;  // Regex for "Ready" topic
+const readyTopicRegex = /^golfball\/golfball\d+\/Ready$/; // Regex for "Ready" topic
 
 socket.on('mqtt_data', function(data) {
-  console.log('Received data:', data);  // Log all received MQTT data
+  console.log('Received data:', data); // Log all received MQTT data
 
   // Velocity updates
   if (velocityTopicRegex.test(data.topic)) {
@@ -59,5 +59,23 @@ function highlightTile(tileElement) {
   tileElement.classList.add('highlight');
   setTimeout(() => {
     tileElement.classList.remove('highlight');
-  }, 1000);  // Highlight duration
+  }, 1000); // Highlight duration
 }
+
+// Event listener for new player command
+document.addEventListener('DOMContentLoaded', function() {
+  const newPlayerButton = document.getElementById('new-player-btn');
+  const newPlayerTooltip = document.getElementById('new-player-tooltip');
+
+  newPlayerButton.addEventListener('click', function() {
+    socket.emit('mqtt_command', { topic: 'golfball/golfball1/command', command: 'new_player' });
+    newPlayerTooltip.classList.add('show');
+    newPlayerButton.disabled = true;
+
+    setTimeout(() => {
+      newPlayerTooltip.classList.remove('show');
+      newPlayerButton.disabled = false;
+    }, 2000);
+  });
+});
+

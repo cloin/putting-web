@@ -1,3 +1,49 @@
+/* Styles for the header */
+.header {
+  position: relative; /* Relative positioning for absolute child elements */
+  /* Other styles as necessary */
+}
+
+/* Style for the "New Player" button */
+.new-player {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  padding: 10px 20px;
+  background-color: #28a745; /* Golf green color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.new-player:hover {
+  background-color: #1e7a34; /* Slightly darker green on hover */
+}
+
+/* Tooltip styling */
+.tooltip {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 50px; /* Position the tooltip above the button */
+  right: 10px; /* Align with the right side of the button */
+  opacity: 0;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+/* Show the tooltip */
+.tooltip.show {
+  visibility: visible;
+  opacity: 1;
+}
+
 /* Base styles */
 body {
     font-family: 'Arial', sans-serif;
