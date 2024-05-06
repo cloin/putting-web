@@ -30,7 +30,7 @@ To get the project running on your local machine, follow these steps:
 
 3. Start the backend server:
    ```
-   npm start
+   node index.js
    ```
 
 4. Open your browser and go to `http://localhost:3000` to view the application.

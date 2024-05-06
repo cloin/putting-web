@@ -16,6 +16,31 @@
   cursor: pointer;
 }
 
+/* GIF popup styling */
+.gif-popup {
+  visibility: hidden;
+  position: fixed;
+  z-index: 1000;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.gif-popup.show {
+  visibility: visible;
+}
+
+.gif-popup img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 5px;
+}
+
 .new-player:hover {
   background-color: #1e7a34; /* Slightly darker green on hover */
 }
