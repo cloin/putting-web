@@ -110,6 +110,8 @@ function highlightTile(tileElement) {
 document.addEventListener('DOMContentLoaded', function() {
   const newPlayerButton = document.getElementById('new-player-btn');
   const newPlayerTooltip = document.getElementById('new-player-tooltip');
+  const strokeCounterElement = document.getElementById('stroke-counter');
+  strokeCounterElement.textContent = 0;
 
   newPlayerButton.addEventListener('click', function() {
     socket.emit('mqtt_command', { topic: 'golfball/golfball1/command', command: 'new_player' });
