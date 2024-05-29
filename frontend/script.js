@@ -117,6 +117,11 @@ document.addEventListener('DOMContentLoaded', function() {
     socket.emit('mqtt_command', { topic: 'anisble-golfs/command', command: 'reset' });
     newPlayerTooltip.classList.add('show');
     newPlayerButton.disabled = true;
+    strokeCounterElement.textContent = 0;
+    const ballStateElement = document.getElementById('ball-state');
+    ballStateElement.textContent = "Awaiting data...";
+    const velocityElement = document.getElementById('velocity');
+    velocityElement.textContent = "Awaiting data...";
 
     setTimeout(() => {
       newPlayerTooltip.classList.remove('show');
