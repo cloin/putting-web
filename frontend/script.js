@@ -1,9 +1,9 @@
 const socket = io();
 
 // Regular expressions to match topics
-const velocityTopicRegex = /^golfball\/golfball\d+\/Velocity$/;
-const ballStateTopicRegex = /^golfball\/golfball\d+\/ballState$/;
-const readyTopicRegex = /^golfball\/golfball\d+\/Ready$/;
+const velocityTopicRegex = /^ansible-golfs\/golfball\/Velocity$/;
+const ballStateTopicRegex = /^ansible-golfs\/golfball\/ballState$/;
+const readyTopicRegex = /^ansible-golfs\/golfball\/Ready$/;
 
 // List of GIFs to randomly select from
 const gifUrls = [
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
   strokeCounterElement.textContent = 0;
 
   newPlayerButton.addEventListener('click', function() {
-    socket.emit('mqtt_command', { topic: 'golfball/golfball1/command', command: 'new_player' });
+    socket.emit('mqtt_command', { topic: 'anisble-golfs/command', command: 'reset' });
     newPlayerTooltip.classList.add('show');
     newPlayerButton.disabled = true;
 

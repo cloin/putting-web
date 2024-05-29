@@ -11,7 +11,7 @@ const io = socketIo(server);
 // Environment variables with fallbacks
 const mqttBrokerUrl = process.env.MQTT_BROKER_URL || 'mqtt://localhost';
 const port = process.env.PORT || 3000;
-const subscriptionTopic = process.env.TOPIC || 'golfball/golfball1/#';
+const subscriptionTopic = process.env.TOPIC || 'ansible-golfs/golfball/#';
 
 // Connect to the MQTT broker
 const mqttClient = MQTT.connect(mqttBrokerUrl);
@@ -32,10 +32,10 @@ io.on('connection', (socket) => {
   console.log('Client connected via socket.io');
 
   socket.on('mqtt_command', (cmd) => {
-    console.log(`Received command to publish to topic ${cmd.topic}`);
-    // Construqt and send mqtt message
-    const mqttMessage = JSON.stringify({ command: cmd.command });
-    mqttClient.publish(cmd.topic, mqttMessage);
+    const topic = 'ansible-golfs/command'; // Ensure this is exactly the same as used in mosquitto_pub
+    const message = { command: 'reset' }; // Ensure this matches the structure expected
+    console.log(`Publishing to topic ${topic} with message ${JSON.stringify(message)}`);
+    mqttClient.publish(topic, JSON.stringify(message));
   });
 });
 
